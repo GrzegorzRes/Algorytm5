@@ -1,4 +1,4 @@
-﻿List<string> listOfWords = new List<string>() { "eat", "ate", "apt", "pat", "tea", "now" };
+﻿List<string> listOfWords = new List<string>() { "Eat", "ate", "apt", "pat", "tea", "now" };
 
 var listOfGroupAnagram = GetAllAnagramsGroupFromList(listOfWords);
 
@@ -13,5 +13,5 @@ foreach(var group in listOfGroupAnagram)
 
 List<IGrouping<string,string>> GetAllAnagramsGroupFromList(List<string> words)
 {
-    return words.GroupBy(word => word = string.Concat(word.OrderBy(ch => ch))).ToList();
+    return words.GroupBy(word => word = string.Concat(word.ToLower().OrderBy(ch => ch))).ToList();
 }
